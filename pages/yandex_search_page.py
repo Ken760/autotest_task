@@ -1,6 +1,6 @@
 from selenium.webdriver import Keys
 from .base_page import BasePage
-from locators.yaru import YandexSearchLocators
+from locators.yandex import YandexSearchLocators
 
 
 class SearchPage(BasePage):
@@ -27,7 +27,6 @@ class SearchPage(BasePage):
         """Проверка результатов поиска"""
         assert self.is_element_present(
             *YandexSearchLocators.SEARCH_RESULTS), 'Страница результатов поиска не появилась'
-
 
     def checking_link_results(self):
         """Проверка первой первой ссылки"""
