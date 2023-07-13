@@ -24,17 +24,17 @@ def test_search_in_yandex(browser):
 def test_yandex_images(browser):
     yandex_images_page = ImagesPage(browser)
     yandex_images_page .go_to_site('https://ya.ru/')
-    with allure.step("Проверка, что кнопка меню присутсвтует на странице"):
+    with allure.step("Проверка присутсвия кнопки меню на странице"):
         yandex_images_page .checking_button_menu()
-    with allure.step('Проверка, что меню открылось и перешло по ссылке'):
+    with allure.step('Проверка открытия меню и перехода по ссылке'):
         yandex_images_page.open_menu_select_images()
     yandex_images_page.switch_to_page()
-    with allure.step("Проверка на то, что перешли на url https://yandex.ru/images/"):
+    with allure.step("Проверка перехода на url https://yandex.ru/images/"):
         yandex_images_page.checking_current_url()
-    with allure.step("Проверка что категория открылась, в строке поиске верный текст"):
-        yandex_images_page.click_theme_images()
-    with allure.step("Открыть 1 картинку, проверить что открылась"):
+    with allure.step("Проверка октрытия категории и текста в строке поиска"):
+        yandex_images_page.selecting_theme_images()
+    with allure.step("Проверка открытия первой картинку"):
         yandex_images_page.click_images()
-    with allure.step("При нажатии кнопки вперед картинка изменяется,"
-                     "При нажатии кнопки назад картинка изменяется на то же изображение"):
+    with allure.step("Проверка нажатия кнопки вперед картинка изменяется,"
+                     "Проверка нажатия кнопки назад картинка изменяется на то же изображение"):
         yandex_images_page.check_images()
