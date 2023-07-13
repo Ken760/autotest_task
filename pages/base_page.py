@@ -9,10 +9,9 @@ class BasePage:
     def __init__(self, browser, timeout=10):
         self.browser = browser
         self.browser.implicitly_wait(timeout)
-        self.base_url = "https://yandex.ru/"
 
-    def go_to_site(self):
-        return self.browser.get(self.base_url)
+    def go_to_site(self, url):
+        return self.browser.get(url)
 
     def is_element_present(self, how, what):
         try:
